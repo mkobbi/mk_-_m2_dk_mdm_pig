@@ -1,6 +1,6 @@
-A = LOAD '/home/mkobbi/workspace/loana_lab2_mkobbi/ml-20m/ratings.csv' USING PigStorage(',') AS (userId:int, movieId:int, rating:float, timestamp:long);
-movies = LOAD '/home/mkobbi/workspace/loana_lab2_mkobbi/ml-20m/movies.csv' USING PigStorage(',') AS (movieId:int, title:chararray, genres:chararray) ;
-tags =  LOAD '/home/mkobbi/workspace/loana_lab2_mkobbi/ml-20m/tags.csv' USING PigStorage(',') AS (userId:int, movieId:int, tag:chararray, timestamp:long);
+A = LOAD '/home/mkobbi/workspace/mkobbi_-_m2_dk_mdm_pig/ml-20m/ratings.csv' USING PigStorage(',') AS (userId:int, movieId:int, rating:float, timestamp:long);
+movies = LOAD '/home/mkobbi/workspace/mkobbi_-_m2_dk_mdm_pig/ml-20m/movies.csv' USING PigStorage(',') AS (movieId:int, title:chararray, genres:chararray) ;
+tags =  LOAD '/home/mkobbi/workspace/mkobbi_-_m2_dk_mdm_pig/ml-20m/tags.csv' USING PigStorage(',') AS (userId:int, movieId:int, tag:chararray, timestamp:long);
 
 B = FILTER A BY rating>0.5 AND rating<5.0;
 C = GROUP B BY userId;
